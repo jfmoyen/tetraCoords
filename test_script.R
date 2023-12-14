@@ -1,6 +1,7 @@
 library(dplyr)
 library(tidyr)
 library(readxl)
+library(magrittr)
 
 # library(tetraCoords)
 
@@ -135,7 +136,7 @@ mutate(ss = ms1 + fsp + CaAl,
        xcoord = sqrt(3)/2*cc,
        ycoord = (bb-aa)/2 )
 
-
+dev.off() ##Careful ! Do not send the graph to RGL device !
 mydataProjected %>%
   # Basic plot definition
   ggplot(aes(x=xcoord,y=ycoord))+
